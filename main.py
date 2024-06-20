@@ -113,6 +113,7 @@ async def change_a_food(food_id: int, food: Annotated[Food, Depends()]):
     session.commit()
 
     return result
+
     
 @app.delete('/food/{food_id}', status_code=status.HTTP_204_NO_CONTENT)
 async def delete_a_food(food_id: int):

@@ -34,7 +34,7 @@
         <div class="row">
             {% for i in result %}
             <div class="col-3">
-                <div class="card">
+                <div class="card" style="display: flex;">
                     <a href="/food/{{ i.id }}">
                         <div class="card-body">
                             <ul class="list-group">
@@ -44,7 +44,7 @@
                             </ul>
                         </div>
                     </a>
-                    <div class="d-grid gap-4 col-2 mx-auto">
+                    <div class="buttton-wrapper" style="display: flex; align-items: center; padding: 0 50px;">
                         <input class="form-control" name="number" type="number" min="1" max="999" value="1">
                         <button class="btn btn-primary buy-button" data-id="{{ i.id }}" data-title="{{ i.title }}"
                             data-price="{{ i.price }}">Buy</button>

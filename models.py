@@ -1,5 +1,6 @@
 from typing import Optional
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Session, select
+
 
 
 class Customer(SQLModel, table=True):
@@ -15,7 +16,7 @@ class Food(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     title: str
     price: int
-    
+        
 class Order(SQLModel, table=True):
     id: Optional[int] = Field(primary_key=True, default=None)
     customer_id: Optional[int] = Field(foreign_key='customer.id',
@@ -45,3 +46,4 @@ class Delivery(SQLModel, table=True):
                                    default=None)
     phone: int
     address: str
+
